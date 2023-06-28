@@ -119,3 +119,10 @@ button:focus-visible {
 .card-image {
   width: 18rem;
 }
+
+.selected-recipes-container {
+  border: 1px solid lightcoral;
+  width: 90rem;
+  height: 50rem;
+  margin: auto;
+}
