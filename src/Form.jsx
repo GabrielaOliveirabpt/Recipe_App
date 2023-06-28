@@ -1,4 +1,5 @@
-function Form() {
+function Form(props) {
+    console.log('props', props.selectedRecipes)
     return (
         <>
             Form

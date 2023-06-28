@@ -6,10 +6,10 @@ import Form from './Form.jsx'
 import Confirmation from './Confirmation.jsx'
 
 function App() {
-  // const [count, setCount] = useState(0)
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [recipesInfo, setRecipesInfo] = useState(null);
+  const [selectedRecipes, setSelectedRecipes] = useState([]);
 
   useEffect(() => {
 
@@ -58,22 +58,29 @@ function App() {
     return <p>Loading...</p>;
   }
 
+  function handleSelectRecipe(cardInfo) {
+
+    if (selectedRecipes.length === 2 || selectedRecipes.includes(cardInfo)) {
+      return;
+    }
+    setSelectedRecipes(prevSelectedRecipes => [
+      ...prevSelectedRecipes, cardInfo
+    ])
+
+
+  }
+  console.log('selectedRecipes', selectedRecipes)
+
   return (
     <>
 
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home data={data} recipesInfo={recipesInfo} />} />
-          <Route path="/user-details" element={<Form />} />
+          <Route exact path="/" element={<Home data={data} handleSelectRecipe={handleSelectRecipe} recipesInfo={recipesInfo} />} />
+          <Route path="/user-details" element={<Form selectedRecipes={selectedRecipes} />} />
           <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
       </BrowserRouter>
-      {/* <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-       
-      </div> */}
 
     </>
   )
