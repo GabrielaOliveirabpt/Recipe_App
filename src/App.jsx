@@ -8,6 +8,7 @@ import Confirmation from './Confirmation.jsx'
 function App() {
   // const [count, setCount] = useState(0)
   const [data, setData] = useState([]);
+  const [recipesInfo, setRecipesInfo] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,17 +21,30 @@ function App() {
       }
     };
 
+    if (data) {
+      // Extract the relevant information and save it to another object
+      const relevantDataArray = data.map((item) => ({
+        // Assign the relevant properties from data
+        image: item.image.url,
+        title: item.title,
+        subtitle: item.subtitle,
+        tags: item.attributes.map((tag) => (tag.key)),
+        id: item.id
+      }))
+
+      setRecipesInfo(relevantDataArray);
+    }
+
     fetchData();
   }, []);
 
-  console.log(data)
 
   return (
     <>
 
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home data={data} />} />
+          <Route exact path="/" element={<Home data={data} recipesInfo={recipesInfo} />} />
           <Route path="/user-details" element={<Form />} />
           <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
