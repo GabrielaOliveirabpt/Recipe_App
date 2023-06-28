@@ -7,37 +7,56 @@ import Confirmation from './Confirmation.jsx'
 
 function App() {
   // const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [recipesInfo, setRecipesInfo] = useState(null);
 
   useEffect(() => {
+
     const fetchData = async () => {
       try {
+        setLoading(true);
         const response = await fetch('https://code-challenge-mid.vercel.app/api/recipes');
         const jsonData = await response.json();
         setData(jsonData.recipes);
       } catch (error) {
         console.error('Error fetching data:', error);
+      } finally {
+        // Finish loading
+        setLoading(false);
       }
     };
 
+
+
+    fetchData();
+  }, []);
+
+
+
+  useEffect(() => {
     if (data) {
       // Extract the relevant information and save it to another object
+
       const relevantDataArray = data.map((item) => ({
         // Assign the relevant properties from data
-        image: item.image.url,
+        image: item.image && item.image.url,
         title: item.title,
         subtitle: item.subtitle,
         tags: item.attributes.map((tag) => (tag.key)),
+
+
         id: item.id
       }))
 
       setRecipesInfo(relevantDataArray);
     }
+  }, [data]);
 
-    fetchData();
-  }, []);
 
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <>
