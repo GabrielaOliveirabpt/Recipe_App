@@ -9,6 +9,36 @@ function Confirmation() {
 
         <h2>Thanks! We have received your information and will get back to you asap!</h2>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br /><br />
+      <br />
+      <br /><br />
+      <br />
+      <br /><br />
+      <br />
+      <br /><br />
+      <br />
+      <br /><br />
+
     </>
   )
 }

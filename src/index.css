@@ -105,6 +105,8 @@ button:focus-visible {
 
 }
 
+
+
 .container-cards {
   /* border: 1px solid lightcoral; */
   display: flex;
@@ -162,4 +164,16 @@ input {
 .btn-confirm {
   float: right;
   margin-right: 20rem;
+}
+
+nav,
+footer {
+  margin: 0;
+  height: 7rem;
+  background-color: #F0BD01;
+}
+
+html,
+body {
+  margin: 0;
 }

@@ -50,6 +50,8 @@ function Form(props) {
   return (
     <>
       <div className="selected-recipes-container">
+        <br />
+        <br />
         <h2>You have selected the following recipes:</h2>
         {recipeNamesElement}
         <h2>Please fill in the form to proceed:</h2>
@@ -74,6 +76,8 @@ function Form(props) {
           </label>
           <br />
           <br />
+          <br />
+          <br />
           <Link to="/confirmation" style={{ textDecoration: 'none' }}>
             <button className="btn-confirm" type="submit">CONFIRM</button>
           </Link>
@@ -81,7 +85,15 @@ function Form(props) {
         <br />
 
       </div>
-
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   )
 }

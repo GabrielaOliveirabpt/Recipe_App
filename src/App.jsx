@@ -60,6 +60,10 @@ function App() {
 
     if (selectedRecipes.length === 2 || selectedRecipes.includes(cardInfo)) {
       return;
+      // const hasSpecificValue = dataArray.some((obj) => obj.hasOwnProperty('name') && obj.name === 'John');
+
+      // console.log(hasSpecificValue); // true
+
     }
     setSelectedRecipes(prevSelectedRecipes => [
       ...prevSelectedRecipes, cardInfo
@@ -71,7 +75,7 @@ function App() {
 
   return (
     <>
-
+      <nav></nav>
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home data={data} handleSelectRecipe={handleSelectRecipe} recipesInfo={recipesInfo} />} />
@@ -79,7 +83,7 @@ function App() {
           <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
       </BrowserRouter>
-
+      <footer></footer>
     </>
   )
 }
