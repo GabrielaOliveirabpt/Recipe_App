@@ -7,7 +7,7 @@ function Form(props) {
 
 
   // console.log('props', props.selectedRecipes)
-  const recipeNamesElement = props.selectedRecipes.map((recipe, index) => (< p key={index} > {recipe.title}</p >))
+  const recipeNamesElement = props.selectedRecipes.map((recipe, index) => (< h2 key={index} >- {recipe.title}</h2 >))
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,6 +59,8 @@ function Form(props) {
         >
           <label>
             First Name:
+            <br />
+
             <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
           </label>
           <br />
@@ -66,12 +68,14 @@ function Form(props) {
 
           <label>
             Email:
+            <br />
+
             <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </label>
           <br />
           <br />
           <Link to="/confirmation" style={{ textDecoration: 'none' }}>
-            <button type="submit">CONFIRM</button>
+            <button className="btn-confirm" type="submit">CONFIRM</button>
           </Link>
         </form>
         <br />

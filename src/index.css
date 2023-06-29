@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  color: grey;
 
   /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -36,6 +37,11 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 2.5em;
+  line-height: 1.1;
+}
+
 button {
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -47,6 +53,10 @@ button {
   cursor: pointer;
 
   transition: border-color 0.25s;
+}
+
+.btn-next {
+  float: right;
 }
 
 /* button:hover {
@@ -99,8 +109,18 @@ button:focus-visible {
   /* border: 1px solid lightcoral; */
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+
   margin: 0 30rem;
+}
+
+.container-button {
+  /* border: 1px solid lightcoral; */
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: end;
+
+  margin: 2rem 30rem;
 }
 
 .tags-container {
@@ -121,8 +141,25 @@ button:focus-visible {
 }
 
 .selected-recipes-container {
-  border: 1px solid lightcoral;
+  /* border: 1px solid lightcoral; */
   width: 90rem;
   height: 50rem;
   margin: auto;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+input {
+  height: 2rem;
+  width: 40rem;
+  font-size: 1.0em;
+  padding-left: .5rem;
+  color: grey;
+}
+
+.btn-confirm {
+  float: right;
+  margin-right: 20rem;
 }

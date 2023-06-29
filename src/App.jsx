@@ -32,8 +32,6 @@ function App() {
     fetchData();
   }, []);
 
-
-
   useEffect(() => {
     if (data) {
       // Extract the relevant information and save it to another object

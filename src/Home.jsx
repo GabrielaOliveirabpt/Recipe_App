@@ -24,68 +24,14 @@ function Home(props) {
       <h2 className="app-title">Please select two recipes</h2>
       <div className="container-cards">
         {cardElements}
-        {/* <div className="card">
-                    <p>title</p>
-                    <p>subtitle</p>
-                    <p>tags</p>
-                    <p>img</p>
-                </div> */}
-        {/* {props.recipesInfo && cardElements} */}
+        <br /><br />
 
-        {/* <div className="card">
-                    <p>title</p>
-                    <p>subtitle</p>
-                    <p>tags</p>
-                    <p>img</p>
-                </div>
-
-                <div className="card">
-                    <p>title</p>
-                    <p>subtitle</p>
-                    <p>tags</p>
-                    <p>img</p>
-                </div>
-                <div className="card">
-                    <p>title</p>
-                    <p>subtitle</p>
-                    <p>tags</p>
-                    <p>img</p>
-                </div>
-                <div className="card">
-                    <p>title</p>
-                    <p>subtitle</p>
-                    <p>tags</p>
-                    <p>img</p>
-                </div>
-                <div className="card">
-                    <p>title</p>
-                    <p>subtitle</p>
-                    <p>tags</p>
-                    <p>img</p>
-                </div>
-
-                <div className="card">
-                    <p>title</p>
-                    <p>subtitle</p>
-                    <p>tags</p>
-                    <p>img</p>
-                </div>
-                <div className="card">
-                    <p>title</p>
-                    <p>subtitle</p>
-                    <p>tags</p>
-                    <p>img</p>
-                </div>
-                <div className="card">
-                    <p>title</p>
-                    <p>subtitle</p>
-                    <p>tags</p>
-                    <p>img</p>
-                </div> */}
+      </div >
+      <div className="container-button">
+        <Link to="/user-details" style={{ textDecoration: 'none' }}>
+          <button className=''>NEXT</button>
+        </Link>
       </div>
-      <Link to="/user-details" style={{ textDecoration: 'none' }}>
-        <button>NEXT</button>
-      </Link>
 
 
     </>
