@@ -104,7 +104,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home data={data} selectedRecipes={selectedRecipes} handleSelectRecipe={handleSelectRecipe} recipesInfo={recipesInfo} />} />
-          <Route path="/user-details" element={<Form selectedRecipes={selectedRecipes} setSelectedRecipes={setSelectedRecipes} setRecipesInfo={setRecipesInfo} />} />
+          <Route path="/user-details" element={<Form selectedRecipes={selectedRecipes} />} />
           <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
       </BrowserRouter>

@@ -39,9 +39,6 @@ function Form(props) {
       }
     } catch (error) {
       console.error('Error:', error);
-    } finally {
-      props.setSelectedRecipes([])
-      props.setRecipesInfo(null)
     }
 
 

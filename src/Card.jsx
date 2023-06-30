@@ -8,7 +8,7 @@ function Card(props) {
         className={`card ${props.isSelected ? 'selected' : ''}`}
         onClick={() => props.handleSelectRecipe(props.recipeInfo, props.id)}>
         <img src={props.img} className="card-image" />
-        <p className="title blue">{props.title}</p>
+        <h4 className="title blue">{props.title}</h4>
         <p className="subtitle">{props.subtitle}</p>
         <div className="tags-container">{tagsElements}</div>
       </div>
