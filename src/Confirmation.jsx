@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 function Confirmation() {
 
   return (
@@ -36,9 +34,7 @@ function Confirmation() {
         <br />
         <br /><br />
         <br />
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <button className='left'>BACK TO HOME</button>
-        </Link>
+
       </div>
 
       <br /><br />
