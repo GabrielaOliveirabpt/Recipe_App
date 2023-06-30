@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 function Confirmation() {
@@ -38,9 +38,9 @@ function Confirmation() {
         <br />
         <br /><br />
         <br />
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        {/* <Link to="/" style={{ textDecoration: 'none' }}>
           <button className="btn-confirm" >BACK TO HOME</button>
-        </Link>
+        </Link> */}
       </div>
 
       <br /><br />
