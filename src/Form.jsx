@@ -6,9 +6,6 @@ function Form(props) {
   const [email, setEmail] = useState("")
 
 
-  // console.log('props', props.selectedRecipes)
-  const recipeNamesElement = props.selectedRecipes.map((recipe, index) => (< h2 key={index} >- {recipe.title}</h2 >))
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -45,6 +42,7 @@ function Form(props) {
 
   }
 
+  const recipeNamesElement = props.selectedRecipes.map((recipe, index) => (< h2 className="blue" key={index} >- {recipe.title}</h2 >))
 
 
   return (
@@ -53,8 +51,13 @@ function Form(props) {
         <br />
         <br />
         <h2>You have selected the following recipes:</h2>
+        <br />
+
         {recipeNamesElement}
+        <br />
+
         <h2>Please fill in the form to proceed:</h2>
+        <br />
 
         <form
           onSubmit={() => handleSubmit}
@@ -62,7 +65,6 @@ function Form(props) {
           <label>
             First Name:
             <br />
-
             <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
           </label>
           <br />
@@ -78,13 +80,34 @@ function Form(props) {
           <br />
           <br />
           <br />
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <button className="btn-back" type="submit">BACK</button>
+          </Link>
           <Link to="/confirmation" style={{ textDecoration: 'none' }}>
-            <button className="btn-confirm" type="submit">CONFIRM</button>
+            <button className="btn-confirm" disabled={!(name && email)} type="submit">CONFIRM</button>
           </Link>
         </form>
         <br />
 
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       <br />

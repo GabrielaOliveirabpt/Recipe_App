@@ -42,8 +42,7 @@ function App() {
         title: item.title,
         subtitle: item.subtitle,
         tags: item.attributes.map((tag) => (tag.key)),
-
-
+        isSelected: false,
         id: item.id
       }))
 
@@ -56,29 +55,55 @@ function App() {
     return <p>Loading...</p>;
   }
 
-  function handleSelectRecipe(cardInfo) {
+  function handleSelectRecipe(cardInfo, id) {
 
-    if (selectedRecipes.length === 2 || selectedRecipes.includes(cardInfo)) {
+    // se a array tiver mais que duas receitas ou se essa receita ja foi selecionada pare de executar essa funcao
+    if (cardInfo.isSelected === true) {
+      // cardInfo.isSelected = false;
+
+      const updatedArray = recipesInfo.map((obj) => {
+        if (obj.id === id) {
+          return { ...obj, isSelected: !obj.isSelected }; // Update the name property of the desired object
+        }
+        return obj; // Return the unchanged object for other elements
+      });
+
+      setRecipesInfo(updatedArray)
+
+
+      const result = selectedRecipes.filter(obj => obj.id !== id)
+      setSelectedRecipes(result)
+
       return;
-      // const hasSpecificValue = dataArray.some((obj) => obj.hasOwnProperty('name') && obj.name === 'John');
-
-      // console.log(hasSpecificValue); // true
-
     }
+
+    if (selectedRecipes.length === 2) {
+      return;
+    }
+
+
+    const updatedArray = recipesInfo.map((obj) => {
+      if (obj.id === id) {
+        return { ...obj, isSelected: !obj.isSelected }; // Update the name property of the desired object
+      }
+      return obj; // Return the unchanged object for other elements
+    });
+
+    setRecipesInfo(updatedArray)
+
     setSelectedRecipes(prevSelectedRecipes => [
-      ...prevSelectedRecipes, cardInfo
+      ...prevSelectedRecipes, { ...cardInfo, isSelected: !cardInfo.isSelected }
     ])
 
 
   }
-  console.log('selectedRecipes', selectedRecipes)
 
   return (
     <>
       <nav></nav>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home data={data} handleSelectRecipe={handleSelectRecipe} recipesInfo={recipesInfo} />} />
+          <Route exact path="/" element={<Home data={data} selectedRecipes={selectedRecipes} handleSelectRecipe={handleSelectRecipe} recipesInfo={recipesInfo} />} />
           <Route path="/user-details" element={<Form selectedRecipes={selectedRecipes} />} />
           <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
