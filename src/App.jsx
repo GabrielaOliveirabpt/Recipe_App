@@ -28,8 +28,6 @@ function App() {
       }
     };
 
-
-
     fetchData();
   }, []);
 
@@ -58,9 +56,7 @@ function App() {
 
   function handleSelectRecipe(cardInfo, id) {
 
-    // se a array tiver mais que duas receitas ou se essa receita ja foi selecionada pare de executar essa funcao
     if (cardInfo.isSelected === true) {
-      // cardInfo.isSelected = false;
 
       const updatedArray = recipesInfo.map((obj) => {
         if (obj.id === id) {
@@ -71,7 +67,6 @@ function App() {
 
       setRecipesInfo(updatedArray)
 
-
       const result = selectedRecipes.filter(obj => obj.id !== id)
       setSelectedRecipes(result)
 
@@ -81,7 +76,6 @@ function App() {
     if (selectedRecipes.length === 2) {
       return;
     }
-
 
     const updatedArray = recipesInfo.map((obj) => {
       if (obj.id === id) {
@@ -95,7 +89,6 @@ function App() {
     setSelectedRecipes(prevSelectedRecipes => [
       ...prevSelectedRecipes, { ...cardInfo, isSelected: !cardInfo.isSelected }
     ])
-
 
   }
 
