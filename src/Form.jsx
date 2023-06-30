@@ -5,6 +5,7 @@ function Form(props) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
 
+  window.scrollTo(0, 0);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,7 +39,12 @@ function Form(props) {
       }
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      props.setSelectedRecipes([])
+      props.setRecipesInfo(null)
     }
+
+
 
   }
 
@@ -56,7 +62,7 @@ function Form(props) {
         {recipeNamesElement}
         <br />
 
-        <h2>Please fill in the form to proceed:</h2>
+        <h3>Please fill in the form to proceed:</h3>
         <br />
 
         <form
@@ -65,7 +71,7 @@ function Form(props) {
           <label>
             First Name:
             <br />
-            <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" id="name" autoFocus name="name" value={name} onChange={(e) => setName(e.target.value)} />
           </label>
           <br />
           <br />
@@ -81,7 +87,7 @@ function Form(props) {
           <br />
           <br />
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <button className="btn-back" type="submit">BACK</button>
+            <button className="left" type="submit">BACK</button>
           </Link>
           <Link to="/confirmation" style={{ textDecoration: 'none' }}>
             <button className="btn-confirm" disabled={!(name && email)} type="submit">CONFIRM</button>

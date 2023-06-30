@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom';
 import Card from './Card.jsx'
+import { Link } from 'react-router-dom';
 
 
 
 function Home(props) {
-
   const cardElements = props.recipesInfo.map((recipeInfo) => (
     <Card
       key={recipeInfo.id}
@@ -22,17 +21,21 @@ function Home(props) {
 
   return (
     <>
-      <h1 className="app-title">Recipe List</h1>
+      <h1 className="app-title blue">Recipe List</h1>
       <h2 className="app-title">Please select two recipes:</h2>
       <div className="container-cards">
         {cardElements}
-        <br /><br />
+
 
       </div >
       <div className="container-button">
         <Link to="/user-details" style={{ textDecoration: 'none' }}>
-          <button className='' disabled={!(props.selectedRecipes.length === 2)}>NEXT</button>
+          <button className='btn-next' disabled={!(props.selectedRecipes.length === 2)}>NEXT</button>
         </Link>
+        {/* <Navigate to="/user-details"  >
+          <button className='btn-next' disabled={!(props.selectedRecipes.length === 2)}>NEXT</button>
+
+        </Navigate> */}
       </div>
 
 
