@@ -11,6 +11,7 @@ function App() {
   const [recipesInfo, setRecipesInfo] = useState(null);
   const [selectedRecipes, setSelectedRecipes] = useState([]);
 
+
   useEffect(() => {
 
     const fetchData = async () => {
