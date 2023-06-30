@@ -9,4 +9,4 @@ npm run dev
 
 # Deployment
 
-A deployed version can be found here: https://gabrielaoliveirabpt.github.io/Recipe_App/
+A deployed version will be available soon using github pages
