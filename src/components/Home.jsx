@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Card from './Card.jsx'
-import './Home.css'
 
 
 
