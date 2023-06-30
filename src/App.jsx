@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
-import Home from './Home.jsx'
-import Form from './Form.jsx'
-import Confirmation from './Confirmation.jsx'
+import Home from './components/Home.jsx'
+import Form from './components/Form.jsx'
+import Confirmation from './components/Confirmation.jsx'
 
 function App() {
   const [loading, setLoading] = useState(true);
