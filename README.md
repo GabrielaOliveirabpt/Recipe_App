@@ -6,3 +6,7 @@ Recipe Application that recives the recipes information from an API and allows t
 npm install
 
 npm run dev
+
+# Deployment
+
+A deployed version can be found here: https://gabrielaoliveirabpt.github.io/Recipe_App/
