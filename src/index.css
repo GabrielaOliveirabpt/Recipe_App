@@ -18,8 +18,20 @@
   flex-direction: column;
 }
 
+html,
+body {
+  margin: 0;
+}
+
 .wrapper {
   flex: 1;
+}
+
+nav,
+footer {
+  margin: 0;
+  height: 7rem;
+  background-color: #F0BD01;
 }
 
 h1 {
@@ -38,32 +50,6 @@ h3 {
 
 .blue {
   color: #00BCD5
-}
-
-button {
-  border: 1px solid transparent;
-  padding: .7em 1.8em;
-  font-size: 1.7em;
-  font-weight: 500;
-  font-family: inherit;
-  color: white;
-  background-color: yellowgreen;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-.left {
-  float: left;
-}
-
-button[disabled] {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.app-title {
-  text-align: center;
-  margin: 4rem 0;
 }
 
 .title {
@@ -89,6 +75,28 @@ button[disabled] {
   padding: 1rem;
   margin: 1rem;
   cursor: pointer;
+}
+
+button {
+  border: 1px solid transparent;
+  padding: .7em 1.8em;
+  font-size: 1.7em;
+  font-weight: 500;
+  font-family: inherit;
+  color: white;
+  background-color: yellowgreen;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.app-title {
+  text-align: center;
+  margin: 4rem 0;
 }
 
 .container-button {
@@ -145,21 +153,13 @@ input:active {
   outline: 'none';
 }
 
+.btns-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn-confirm {
-  float: right;
   margin-right: 10rem;
-}
-
-nav,
-footer {
-  margin: 0;
-  height: 7rem;
-  background-color: #F0BD01;
-}
-
-html,
-body {
-  margin: 0;
 }
 
 .selected {

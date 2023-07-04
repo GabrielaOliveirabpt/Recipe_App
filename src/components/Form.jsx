@@ -56,7 +56,7 @@ function Form(props) {
         <br />
 
         <h3>Please fill in the form to proceed:</h3>
-        <br />
+        {/* <br /> */}
 
         <form
           onSubmit={() => handleSubmit}
@@ -78,12 +78,15 @@ function Form(props) {
           <br />
           <br />
           <br />
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <button className="left" type="submit">BACK</button>
-          </Link>
-          <Link to="/confirmation" style={{ textDecoration: 'none' }}>
-            <button className="btn-confirm" disabled={!(name && email)} type="submit">CONFIRM</button>
-          </Link>
+          <div className="btns-container">
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <button className="left" type="submit">BACK</button>
+            </Link>
+            <Link to="/confirmation" style={{ textDecoration: 'none' }}>
+              <button className="btn-confirm" disabled={!(name && email)} type="submit">CONFIRM</button>
+            </Link>
+          </div>
+
         </form>
         <br />
       </div>
