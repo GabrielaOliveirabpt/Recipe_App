@@ -94,14 +94,16 @@ function App() {
 
   return (
     <>
-      <nav></nav>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Home data={data} selectedRecipes={selectedRecipes} handleSelectRecipe={handleSelectRecipe} recipesInfo={recipesInfo} />} />
-          <Route path="/user-details" element={<Form selectedRecipes={selectedRecipes} />} />
-          <Route path="/confirmation" element={<Confirmation />} />
-        </Routes>
-      </BrowserRouter>
+      <div className='wrapper'>
+        <nav></nav>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Home data={data} selectedRecipes={selectedRecipes} handleSelectRecipe={handleSelectRecipe} recipesInfo={recipesInfo} />} />
+            <Route path="/user-details" element={<Form selectedRecipes={selectedRecipes} />} />
+            <Route path="/confirmation" element={<Confirmation />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
       <footer></footer>
     </>
   )
