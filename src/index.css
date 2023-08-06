@@ -61,7 +61,6 @@ h3 {
 }
 
 .container-cards {
-  /* border: 1px solid purple; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -71,7 +70,6 @@ h3 {
 
 /* media queries: */
 @media only screen and (max-width: 870px) {
-
   .container-cards {
     display: flex;
     flex-wrap: wrap;
@@ -82,7 +80,6 @@ h3 {
 }
 
 @media only screen and (max-width: 800px) {
-
   .container-cards {
     display: flex;
     flex-wrap: wrap;
@@ -93,7 +90,6 @@ h3 {
 }
 
 @media only screen and (min-width: 1690px) {
-
   .container-cards {
     display: flex;
     flex-wrap: wrap;
@@ -103,13 +99,36 @@ h3 {
   }
 }
 
-.card {
-  border: 5px solid lightgrey;
-  width: 18rem;
-  height: 30rem;
-  padding: 1rem;
-  margin: 1rem;
-  cursor: pointer;
+.selected-recipes-container {
+  padding: 0 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: auto;
+}
+
+input {
+  height: 3.2rem;
+  width: 40rem;
+  font-size: 0.8em;
+  padding-left: .5rem;
+  color: grey;
+  fill: none;
+  border-color: lightgrey;
+  background: transparent;
+}
+
+input:focus-visible {
+  outline: 1px solid transparent;
+  background: none;
+}
+
+input:active {
+  outline: 'none';
+}
+
+.btn-confirm {
+  margin-right: 10rem;
 }
 
 button {
@@ -122,6 +141,83 @@ button {
   background-color: yellowgreen;
   cursor: pointer;
   transition: border-color 0.25s;
+}
+
+@media only screen and (max-width: 920px) {
+  .selected-recipes-container {
+    padding: 0 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .selected-recipes-container {
+    padding: 0 0 0 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .selected-recipes-container {
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+  }
+
+  input {
+    width: 27rem;
+  }
+
+  .btn-confirm {
+    margin-right: 0rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .selected-recipes-container {
+    padding: 0 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+  }
+
+  input {
+    width: 20rem;
+  }
+
+  button {
+    border: 1px solid transparent;
+    padding: .7em 1.8em;
+    font-size: 1.4em;
+    font-weight: 500;
+    font-family: inherit;
+    color: white;
+    background-color: yellowgreen;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+
+  .btn-confirm {
+    margin-right: 0rem;
+  }
+}
+
+.card {
+  border: 5px solid lightgrey;
+  width: 18rem;
+  height: 30rem;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
 }
 
 button[disabled] {
@@ -158,44 +254,20 @@ button[disabled] {
   width: 18rem;
 }
 
-.selected-recipes-container {
-  width: 90rem;
-  height: 50rem;
-  margin: auto;
-}
+
 
 label {
   font-size: 2em;
 }
 
-input {
-  height: 3.2rem;
-  width: 40rem;
-  font-size: 0.8em;
-  padding-left: .5rem;
-  color: grey;
-  fill: none;
-  border-color: lightgrey;
-  background: transparent;
-}
 
-input:focus-visible {
-  outline: 1px solid transparent;
-  background: none;
-}
-
-input:active {
-  outline: 'none';
-}
 
 .btns-container {
   display: flex;
   justify-content: space-between;
 }
 
-.btn-confirm {
-  margin-right: 10rem;
-}
+
 
 .selected {
   border: 5px solid #F0BD01;
