@@ -9,4 +9,4 @@ npm run dev
 
 # Deployment
 
-A deployed version will be available soon using github pages
+A deployed version is available using Netfly: https://loquacious-tiramisu-a3c41e.netlify.app/
