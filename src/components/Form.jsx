@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 function Form(props) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
 
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls the window to the top
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,7 +44,7 @@ function Form(props) {
     }
   }
 
-  const recipeNamesElement = props.selectedRecipes.map((recipe, index) => (< h2 className="blue" key={index} >- {recipe.title}</h2 >))
+  const recipeNamesElement = props.selectedRecipes.map((recipe, index) => (<h2 className="blue" key={index} >- {recipe.title}</h2>))
 
 
   return (
@@ -54,10 +56,7 @@ function Form(props) {
         <br />
         {recipeNamesElement}
         <br />
-
         <h3>Please fill in the form to proceed:</h3>
-        {/* <br /> */}
-
         <form
           onSubmit={() => handleSubmit}
         >
@@ -90,7 +89,6 @@ function Form(props) {
         </form>
         <br />
       </div>
-
 
     </>
   )

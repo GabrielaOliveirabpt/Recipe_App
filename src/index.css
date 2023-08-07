@@ -254,21 +254,19 @@ button[disabled] {
   width: 18rem;
 }
 
-
-
 label {
   font-size: 2em;
 }
-
-
 
 .btns-container {
   display: flex;
   justify-content: space-between;
 }
 
-
-
 .selected {
   border: 5px solid #F0BD01;
+}
+
+.small_padding {
+  padding: 2rem;
 }

@@ -13,7 +13,6 @@ function Home(props) {
       tags={recipeInfo.tags}
       img={recipeInfo.image}
       handleSelectRecipe={props.handleSelectRecipe}
-      selectedRecipes={props.selectedRecipes}
     />
   ))
 
@@ -26,7 +25,7 @@ function Home(props) {
       </div >
       <div className="container-button">
         <Link to="/user-details" style={{ textDecoration: 'none' }}>
-          <button className='btn-next' disabled={!(props.selectedRecipes.length === 2)}>NEXT</button>
+          <button disabled={!(props.selectedRecipes.length === 2)}>NEXT</button>
         </Link>
       </div>
     </>
