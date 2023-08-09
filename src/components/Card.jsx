@@ -1,6 +1,17 @@
 function Card(props) {
 
-  const tagsElements = props.tags.map((tag, index) => <div key={index}>{tag}</div>)
+  const mealAttributeKeys = {
+    no_gluten_ingredients: 'no gluten',
+    under_30min: 'under 30 min.',
+    poultry: 'poultry',
+    kid_friendly: 'kid friendly',
+    dairy_free: 'dairy free',
+    meat: 'meat',
+    optional_heat: 'optional heat',
+    vegetarian: 'vegetarian',
+  };
+
+  const tagsElements = props.tags.map((tag, index) => <div key={index}>{mealAttributeKeys[tag].toUpperCase()}</div>)
 
   return (
     <>

@@ -53,11 +53,14 @@ h3 {
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 1.8em;
+  margin-top: 0.3rem;
 }
 
 .subtitle {
-  font-size: 1.1em;
+  font-size: 1.3em;
+  padding-top: 0;
+  margin-top: -2rem;
 }
 
 .container-cards {
@@ -237,9 +240,10 @@ button[disabled] {
 }
 
 .tags-container {
-  width: 15rem;
+  width: 18rem;
   display: flex;
   flex-wrap: wrap;
+  margin-top: -0.8rem;
 }
 
 .tags-container>div {
@@ -248,6 +252,7 @@ button[disabled] {
   margin: 0.3rem;
   padding: 0.1rem 0.3rem;
   text-align: center;
+  font-size: 1em;
 }
 
 .card-image {
