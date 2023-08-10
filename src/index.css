@@ -21,6 +21,8 @@
 html,
 body {
   margin: 0;
+  background-color: #f8f7f4;
+  /* box-sizing: border-box; */
 }
 
 .wrapper {
@@ -71,18 +73,30 @@ h3 {
   align-items: flex-start;
 }
 
-/* media queries: */
-@media only screen and (max-width: 870px) {
+/* media queries home: */
+
+@media only screen and (max-width: 930px) {
   .container-cards {
+    border: 1px solid red;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0 15rem;
     align-items: flex-start;
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 847px) {
+  .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 12rem;
+    align-items: flex-start;
+  }
+}
+
+@media only screen and (max-width: 780px) {
   .container-cards {
     display: flex;
     flex-wrap: wrap;
@@ -92,7 +106,9 @@ h3 {
   }
 }
 
-@media only screen and (min-width: 1690px) {
+
+
+/* @media only screen and (min-width: 1690px) {
   .container-cards {
     display: flex;
     flex-wrap: wrap;
@@ -100,7 +116,7 @@ h3 {
     margin: 0 30rem;
     align-items: flex-start;
   }
-}
+} */
 
 .selected-recipes-container {
   padding: 0 30rem;
@@ -145,6 +161,8 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
+/* media queries user-details: */
 
 @media only screen and (max-width: 920px) {
   .selected-recipes-container {
@@ -215,12 +233,20 @@ button {
 }
 
 .card {
-  border: 5px solid lightgrey;
-  width: 18rem;
+  border: 5px solid transparent;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: #FFFFFF;
+  width: 24rem;
   height: 30rem;
-  padding: 1rem;
   margin: 1rem;
+  padding: 0;
   cursor: pointer;
+}
+
+.card-text {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0rem;
 }
 
 button[disabled] {
@@ -240,7 +266,7 @@ button[disabled] {
 }
 
 .tags-container {
-  width: 18rem;
+  width: 20rem;
   display: flex;
   flex-wrap: wrap;
   margin-top: -0.8rem;
@@ -252,11 +278,11 @@ button[disabled] {
   margin: 0.3rem;
   padding: 0.1rem 0.3rem;
   text-align: center;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .card-image {
-  width: 18rem;
+  width: 24rem;
 }
 
 label {
