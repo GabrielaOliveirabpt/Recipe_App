@@ -48,7 +48,7 @@ function Form(props) {
     }
   }
 
-  const recipeNamesElement = props.selectedRecipes.map((recipe, index) => (<h2 className="blue" key={index} >- {recipe.title}</h2>))
+  const recipeNamesElement = props.selectedRecipes.map((recipe, index) => (<h3 className="blue" key={index} > {recipe.title}</h3>))
 
 
   return (
@@ -57,14 +57,14 @@ function Form(props) {
         <br />
         <br />
         <h2>You have selected the following recipes:</h2>
-        <br />
+
         {recipeNamesElement}
-        <br />
+
         <h3>Please fill in the form to proceed:</h3>
 
         <form onSubmit={handleSubmit}>
           <label>
-            First Name:
+            Name:
             <br />
             <input type="text" id="name" autoFocus name="name" value={name} onChange={(e) => setName(e.target.value)} />
           </label>

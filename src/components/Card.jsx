@@ -20,7 +20,7 @@ function Card(props) {
         onClick={() => props.handleSelectRecipe(props.recipeInfo, props.id)}>
         <img src={props.img} className="card-image" alt={`recipe image of ${props.title}`} />
         <div className="card-text">
-          <h4 className="title blue">{props.title}</h4>
+          <h3 className="title blue">{props.title}</h3>
           <p className="subtitle">{props.subtitle}</p>
           <div className="tags-container">{tagsElements}</div>
         </div>
