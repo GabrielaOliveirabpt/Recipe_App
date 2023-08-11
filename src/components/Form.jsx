@@ -14,7 +14,6 @@ function Form(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('callingggg')
 
     // Create a data object with the form values
     const formData = {

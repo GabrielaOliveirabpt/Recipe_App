@@ -47,7 +47,7 @@ function App() {
     return <p className='small_padding'>Loading...</p>;
   }
 
-  function handleSelectRecipe(cardInfo, id) {
+  const handleSelectRecipe = (cardInfo, id) => {
     if (cardInfo.isSelected === true) { // Checks if that card is already selected
       const updatedArray = recipesInfo.map((obj) => {
         if (obj.id === id) {
