@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Form(props) {
   const [name, setName] = useState("")
@@ -9,14 +9,18 @@ function Form(props) {
     window.scrollTo(0, 0); // Scrolls the window to the top
   }, []);
 
+  const navigate = useNavigate()
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('callingggg')
 
     // Create a data object with the form values
     const formData = {
-      name: name,
+      firstName: name,
       email: email,
-      selectedRecipes: props.selectedRecipes
+      recipes: props.selectedRecipes.map((recipe) => recipe.id)
     };
 
     try {
@@ -35,6 +39,7 @@ function Form(props) {
         // Reset the form fields
         setName('');
         setEmail('');
+        navigate('/confirmation')
       } else {
         // Handle errors if the request was not successful
         console.log('Error sending form data');
@@ -57,9 +62,8 @@ function Form(props) {
         {recipeNamesElement}
         <br />
         <h3>Please fill in the form to proceed:</h3>
-        <form
-          onSubmit={() => handleSubmit}
-        >
+
+        <form onSubmit={handleSubmit}>
           <label>
             First Name:
             <br />
@@ -81,9 +85,7 @@ function Form(props) {
             <Link to="/" style={{ textDecoration: 'none' }}>
               <button className="left" type="submit">BACK</button>
             </Link>
-            <Link to="/confirmation" style={{ textDecoration: 'none' }}>
-              <button className="btn-confirm" disabled={!(name && email)} type="submit">CONFIRM</button>
-            </Link>
+            <button className="btn-confirm" disabled={!(name && email)} type="submit">CONFIRM</button>
           </div>
 
         </form>
